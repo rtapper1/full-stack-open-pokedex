@@ -37,10 +37,10 @@ jobs:
           api-key: ${{ secrets.RENDER_TOKEN }}
         if: ${{ github.event_name == 'push' }}
   tag_release:
+    needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
       - name: Tag release
-        needs: [simple_deployment_pipeline]
         uses: anothrNick/github-tag-action@1.61.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
