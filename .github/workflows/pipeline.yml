@@ -28,7 +28,7 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5001
       - name: Render deployment
-        uses: johnbeynon/render-deploy-action
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: srv-cgms51aut4meq5knp12g
           api-key: ${{ secrets.RENDER_TOKEN }}
